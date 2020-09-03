@@ -49,8 +49,9 @@ def arithmetic_arranger(problems, displayMode=False):
             return exp
         no1 = int(number1)
         no2 = int(number2)
-        # space contains the max no. os spaces required. 
+        # space contains the max no. os spaces required.
         space = max(len(number1), len(number2))
+        # For first arithmetic arragement
         if start == True:
             line1 += number1.rjust(space + 2)
             line2 += operator + ' ' + number2.rjust(space)
@@ -61,6 +62,7 @@ def arithmetic_arranger(problems, displayMode=False):
                 else:
                     line4 += str(no1 - no2).rjust(space + 2)
             start = False
+        # Other than first arithmetic arragement
         else:
             line1 += number1.rjust(space + 6)
             line2 += operator.rjust(5) + ' ' + number2.rjust(space)
@@ -70,7 +72,7 @@ def arithmetic_arranger(problems, displayMode=False):
                     line4 += side_space + str(no1 + no2).rjust(space + 2)
                 else:
                     line4 += side_space + str(no1 - no2).rjust(space + 2)
-
+    # displayMode is Ture then append line4
     if displayMode == True:
         return line1 + '\n' + line2 + '\n' + line3 + '\n' + line4
     return line1 + '\n' + line2 + '\n' + line3
